@@ -1,4 +1,4 @@
-from src import widget
+from src.widget import mask, date
 
 
 print(mask("Maestro 1596837868705199"))

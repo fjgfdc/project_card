@@ -1,4 +1,4 @@
-import masks
+from masks import mask_account, mask_card
 
 
 def mask(card: str) -> str:
