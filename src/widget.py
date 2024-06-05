@@ -2,6 +2,7 @@ from masks import mask_account, mask_card
 
 
 def mask(card: str) -> str:
+    """Return mask of accounts and cards"""
     if "Счет" in card:
         return mask_account(card)
     else:
@@ -11,4 +12,5 @@ def mask(card: str) -> str:
 
 
 def date(time: str) -> str:
+    """Return date"""
     return f"{time[8:10]}.{time[6:7]}.{time[:4]}"
