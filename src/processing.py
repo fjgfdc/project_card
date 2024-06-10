@@ -1,7 +1,5 @@
-from typing import Iterable
 
-
-def filter_by_state(state_list: dict, normal_state: str = "EXECUTED") -> Iterable[dict]:
+def filter_by_state(state_list: list[dict], normal_state: str = "EXECUTED") -> list[dict]:
     """Return filtered list by state"""
     total_list = []
     for dict_list in state_list:
@@ -10,7 +8,7 @@ def filter_by_state(state_list: dict, normal_state: str = "EXECUTED") -> Iterabl
     return total_list
 
 
-def sort_by_date(date_list: dict, reverse_list: bool = True) -> Iterable[dict]:
+def sort_by_date(date_list: list[dict], reverse_list: bool = True) -> list[dict]:
     """Return filtered list by date"""
     sorted_list = sorted(date_list, key=lambda date_dict: date_dict.get("date"), reverse=reverse_list)
     return sorted_list
