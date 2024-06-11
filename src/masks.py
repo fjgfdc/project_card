@@ -1,6 +1,6 @@
 def mask_card(card_numb: str) -> str:
     """Return masked card(str)"""
-    return f"{card_numb[:5]} {card_numb[5:7]}{"*" * 2} {"*" * 4} {card_numb[12:]}"
+    return f"{card_numb[:4]} {card_numb[4:6]}{"*" * 2} {"*" * 4} {card_numb[12:]}"
 
 
 def mask_account(account_number: str) -> str:
