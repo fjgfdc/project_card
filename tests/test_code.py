@@ -2,6 +2,7 @@ import pytest
 from src.masks import mask_account, mask_card
 from src.processing import filter_by_state, sort_by_date
 from src.widget import masked, dated
+from src.generators import transactions, filter_by_currency, transaction_descriptions, card_number_generator
 
 
 @pytest.fixture
@@ -52,3 +53,15 @@ def test_add(x, expected):
 
 def teste_dated(date):
     assert dated(date) == "11.07.2018"
+
+
+def teste_filter_by_currency():
+    assert next(filter_by_currency(transactions, "USD")) == 939719570
+
+
+def teste_transaction_descriptions():
+    assert next(transaction_descriptions(transactions)) == "Перевод организации"
+
+
+def teste_card_number_generator():
+    assert next(card_number_generator(1, 1)) == "0000 0000 0000 0001"

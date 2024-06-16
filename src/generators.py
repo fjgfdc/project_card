@@ -88,7 +88,9 @@ def filter_by_currency(transactions, value):
 
 def transaction_descriptions(transactions):
     """Возвращает последовательно действия над счетами"""
-    yield transactions["description"]
+    for trans in transactions:
+        yield trans["description"]
+
 
 
 def card_number_generator(start, stop):
@@ -96,3 +98,5 @@ def card_number_generator(start, stop):
     for i in range(start, stop + 1):
         num = (16-len(str(i))) * "0" + str(i)
         yield f"{num[:4]} {num[4:8]} {num[8:12]} {num[12:16]}"
+
+
