@@ -3,6 +3,7 @@ from src.masks import mask_account, mask_card
 from src.processing import filter_by_state, sort_by_date
 from src.widget import masked, dated
 from src.generators import transactions, filter_by_currency, transaction_descriptions, card_number_generator
+from src.decorators import log
 
 
 @pytest.fixture
@@ -65,3 +66,15 @@ def teste_transaction_descriptions():
 
 def teste_card_number_generator():
     assert next(card_number_generator(1, 1)) == "0000 0000 0000 0001"
+
+
+@log(filename="../mylog.txt")
+def my_function(x, y):
+    return x / y
+
+
+def teste_log_func_err():
+    my_function(2, 0)
+    with open("../mylog.txt", "r") as f:
+        result = f.read()
+        assert result == "my_function error: division by zero. Inputs: (2, 0), {}\n"
