@@ -2,6 +2,12 @@ from functools import wraps
 
 
 def log(filename=""):
+    """
+             Декоратор для логирования вызовов функции.
+
+             Параметры:
+             filename (str): Имя файла для логирования. Если не указано, логирование происходит в консоль.
+             """
     def log_wrapper(func):
         @wraps(func)
         def log_inner(*args, **kwargs):
