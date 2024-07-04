@@ -20,3 +20,4 @@ def amount_transaction(transaction):
 
     else:
         raise ValueError(f"Неизвестная валюта {currency}")
+

@@ -12,3 +12,4 @@ def operations(file_path='..\\data\\operations.json'):
                 return []
     except (json.JSONDecodeError, OSError):
         return []
+
