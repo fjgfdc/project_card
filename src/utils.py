@@ -1,7 +1,7 @@
 import json
 
 
-def operations(file_path='..\\data\\operations.json'):
+def operations(file_path):
     """Возвращает список словарей с данными о финансовых транзакциях"""
     try:
         with open(file_path, "r", encoding="utf-8") as f:
@@ -12,4 +12,3 @@ def operations(file_path='..\\data\\operations.json'):
                 return []
     except (json.JSONDecodeError, OSError):
         return []
-
