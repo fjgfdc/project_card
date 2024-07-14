@@ -20,7 +20,7 @@ git clone git@github.com:fjgfdc/project_card.git
 
 ## Логеры:
 
-Используются логеры.
+Используются логеры в функциях masks и utils.
 
 ## Документация:
 
