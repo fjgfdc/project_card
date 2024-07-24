@@ -18,6 +18,10 @@ git clone git@github.com:fjgfdc/project_card.git
 
 В тестах используется концепция TDD, фреимворк pytest и codecoverage.
 
+## Тесты:
+
+Используются возможности открытия файлов JSON, CSV и EXEL.
+
 ## Документация:
 
 Для получения дополнительной информации обратитесь к [документации](docs/README.md).
