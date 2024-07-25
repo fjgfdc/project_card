@@ -33,8 +33,31 @@ def get_csv_dict(file_name):
 
 
 def get_exel_dict(file_name):
-    df = pd.read_excel(file_name)
-    return df
+    """Считывает данные о финансовых операциях из EXEL файла и преобразует их в список словарей"""
+    try:
+        df = pd.read_excel(file_name)
+        result = []
+        rows_count = len(df)
+        for row in range(0, rows_count):
+            row_dict = {
+                "id": df.at[row, "id"],
+                "state": df.at[row, "state"],
+                "date": df.at[row, "date"],
+                "operationAmount": {
+                    "amount": df.at[row, "amount"],
+                    "currency": {
+                        "name": df.at[row, "currency_name"],
+                        "code": df.at[row, "currency_code"],
+                    },
+                },
+                "description": df.at[row, "description"],
+                "from": df.at[row, "from"],
+                "to": df.at[row, "to"],
+            }
+            result.append(row_dict)
+        return result
+    except Exception:
+        return [{}]
 
 
 print(get_csv_dict('../data/transactions.csv'))
