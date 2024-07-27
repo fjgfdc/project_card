@@ -8,11 +8,12 @@ def filter_by_state(state_list: list[dict], normal_state: str = "EXECUTED") -> l
     return total_list
 
 
-def sort_by_date(date_list: list[dict], reverse_list: bool = True) -> list[dict]:
-    """Return filtered list by date"""
-    sorted_list = sorted(date_list, key=lambda date_dict: date_dict.get("date"), reverse=reverse_list)
-    return sorted_list
+# def sort_by_date(date_list: list[dict], reverse_list: bool = True) -> list[dict]:
+#    """Return filtered list by date"""
+#    sorted_list = sorted(date_list, key=lambda date_dict: date_dict.get("date"), reverse=reverse_list)
+#    return sorted_list
 
 
-print(filter_by_state([{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-                       {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]))
+def sort_by_date(lists, sorts):
+    """Сортировка словарей по дате."""
+    return sorted(lists, key=lambda x: x.get("date"), reverse=sorts)
